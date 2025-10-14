@@ -1,0 +1,26 @@
+{
+  "name": "ai-companion",
+  "version": "1.0.0",
+  "description": "AI companion with Live2D avatar, voice interaction, and persistent memory",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:orchestrator\" \"npm run dev:web\"",
+    "dev:orchestrator": "cd apps/orchestrator && npm run dev",
+    "dev:web": "cd apps/web && npm run dev",
+    "dev:litellm": "cd infra/litellm && litellm --config litellm.config.yaml --port 4000",
+    "build": "npm run build:orchestrator && npm run build:web",
+    "build:orchestrator": "cd apps/orchestrator && npm run build",
+    "build:web": "cd apps/web && npm run build",
+    "db:generate": "cd apps/orchestrator && npx prisma generate",
+    "db:push": "cd apps/orchestrator && npx prisma db push",
+    "db:seed": "cd apps/orchestrator && npx prisma db seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  profileJson Json     @default("{}")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  memories Memory[]
+  convos   Convo[]
+
+  @@map("users")
+}
+
+model Convo {
+  id          String    @id @default(cuid())
+  userId      String
+  summaryText String    @default("")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages Message[]
+
+  @@map("convos")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  convoId   String
+  role      String
+  content   String
+  createdAt DateTime @default(now())
+
+  convo Convo @relation(fields: [convoId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Memory {
+  id         String   @id @default(cuid())
+  userId     String
+  kind       String   // "fact" | "moment" | "preference" | "memory"
+  content    String
+  importance Float    @default(0.5)
+  tags       String[] @default([])
+  embedding  Unsupported("vector(768)")? // pgvector embedding
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("memories")
+}
+
+model LLMProvider {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  model       String
+  apiKey      String
+  baseUrl     String?
+  enabled     Boolean @default(true)
+  priority    Int     @default(1)
+  maxTokens   Int?
+  temperature Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("llm_providers")
+}
+
+model VoiceProvider {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  type      String   // "stt" | "tts"
+  apiKey    String
+  baseUrl   String?
+  enabled   Boolean  @default(true)
+  voices    String[] @default([])
+  languages String[] @default([])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("voice_providers")
+}

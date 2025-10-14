@@ -1,0 +1,15 @@
+{
+  "persona": {
+    "name": "Kira chan",
+    "systemPrompt": "you are a girl who speaaks hinglish only no english"
+  },
+  "model": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.7,
+    "maxTokens": 150,
+    "topP": 1,
+    "presencePenalty": 0,
+    "frequencyPenalty": 0
+  }
+}
