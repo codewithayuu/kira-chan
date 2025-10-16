@@ -140,15 +140,6 @@ LANGFUSE_SECRET_KEY=sk-...
 
 ---
 
-## 📈 **ROADMAP**
-
-- [ ] **Mobile App**: React Native companion app
-- [ ] **Advanced Analytics**: ML-based quality improvement
-- [ ] **Multi-language Support**: International language support
-- [ ] **Plugin System**: Extensible functionality
-- [ ] **Enterprise Features**: Team collaboration and management
-
----
 
 ## 🤝 **CONTRIBUTING**
 
