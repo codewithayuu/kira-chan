@@ -183,7 +183,7 @@ npm test
 
 ---
 
-**Built with ❤️ for the future of human-AI interaction**
+**Built with ❤️iambatman**
 
 *Kira Chan represents a glimpse into the future of AI companions - where technology understands not just what we say, but how we feel, how we communicate, and how to respond in a way that feels genuinely human.*
 
