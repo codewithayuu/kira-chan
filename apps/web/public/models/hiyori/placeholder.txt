@@ -1,8 +1,0 @@
-This directory is for the Hiyori Live2D model.
-
-To get started:
-1. Download the Hiyori model from https://www.live2d.com/en/download/sample-data/
-2. Extract the files to this directory
-3. The main model file should be named hiyori_free_t08.model3.json
-
-The model will be automatically loaded by the Live2DAvatar component.
