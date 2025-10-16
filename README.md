@@ -143,13 +143,7 @@ LANGFUSE_BASE_URL=https://cloud.langfuse.com
 - **Data Privacy**: Local processing where possible
 - **Secure Storage**: Encrypted memory and conversation data
 
-## 📈 Roadmap
 
-- [ ] **Mobile App**: React Native companion app
-- [ ] **Advanced Analytics**: ML-based quality improvement
-- [ ] **Multi-language Support**: International language support
-- [ ] **Plugin System**: Extensible functionality
-- [ ] **Enterprise Features**: Team collaboration and management
 
 ## 🤝 Contributing
 
