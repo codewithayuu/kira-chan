@@ -1,6 +1,6 @@
 # 🤖 Kira Chan - AI Companion (Minimal Web + Backend)
 
-> **A free/trial-first AI companion with persistent persona + learning, multi-API hot-swap, 3D VRM avatar, browser TTS/STT, and local embeddings.**
+> **A free AI companion with persistent persona + learning, multi-API hot-swap, 3D VRM avatar, browser TTS/STT, and local embeddings.**
 
 [![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/codewithayuu/kira-chan)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org/)
